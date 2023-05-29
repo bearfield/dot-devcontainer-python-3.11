@@ -44,11 +44,6 @@ RUN wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && rm get-pip.py
 
-# 各種パッケージのインストール
-RUN pip install openai
-RUN pip install flake8
-RUN pip install autopep8
-
 #
 # set env
 ENV DEBIAN_FRONTEND=dialog
