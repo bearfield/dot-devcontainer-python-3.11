@@ -2,6 +2,7 @@ FROM ghcr.io/kumanoryo/debian-fish:bullseye
 #
 # set argument
 ARG PYTHON_VERSION=3.11.3
+ARG USER_NAME=kumano_ryo
 #
 # Add HashiCorp Linux repository and install terraform.
 USER root
@@ -38,12 +39,17 @@ RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VER
 
 # デフォルトのPythonバージョンを3.11に設定
 RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.11 1
-
 # pipのインストール
 RUN wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && rm get-pip.py
-
+# pyenvのインストール(pipenvのpythonバージョン管理に必要)
+USER $USER_NAME
+RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
+    && cd ~/.pyenv && src/configure && make -C src
+# pipenvのインストール
+USER root
+RUN pip install pipenv
 #
 # set env
 ENV DEBIAN_FRONTEND=dialog
