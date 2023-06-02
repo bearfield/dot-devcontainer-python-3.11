@@ -7,6 +7,8 @@
         "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
     ],
     "remoteEnv": {
+        "PYENV_ROOT": "/home/kumano_ryo/.pyenv",
+        "PATH": "${containerEnv:PYENV_ROOT}/bin:${containerEnv:PATH}"
     },
     "customizations": {
         "vscode": {
@@ -38,7 +40,8 @@
                 "oderwat.indent-rainbow",
                 "ms-python.python",
                 "kevinrose.vsc-python-indent",
-                "ms-python.flake8"
+                "ms-python.flake8",
+                "ms-python.black-formatter"
             ]
         }
     }
