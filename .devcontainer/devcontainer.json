@@ -1,6 +1,6 @@
 {
     "name": "dot-devcontainer-python-3.11",
-    "image": "ghcr.io/kumanoryo/python:3.11",
+    "image": "ghcr.io/bearfield/python:3.11",
     "remoteUser": "kumano_ryo",
     "mounts": [
         "source=${localEnv:HOME}/devcontainer_conf/.gitconfig_linux,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",

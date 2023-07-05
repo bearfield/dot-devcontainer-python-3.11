@@ -1,4 +1,4 @@
-FROM ghcr.io/kumanoryo/debian-fish:bullseye
+FROM ghcr.io/bearfield/debian-fish:bullseye
 #
 # set argument
 ARG PYTHON_VERSION=3.11.3
@@ -53,4 +53,4 @@ RUN pip install pipenv
 #
 # set env
 ENV DEBIAN_FRONTEND=dialog
-LABEL org.opencontainers.image.source https://github.com/kumanoryo/dot-devcontainer-python-3.11
+LABEL org.opencontainers.image.source https://github.com/bearfield/dot-devcontainer-python-3.11
