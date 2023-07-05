@@ -1,4 +1,4 @@
-FROM ghcr.io/bearfield/debian-fish:bullseye
+FROM ghcr.io/bearfield/debian-fish:bookworm
 #
 # set argument
 ARG PYTHON_VERSION=3.11.3
